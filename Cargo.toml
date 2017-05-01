@@ -4,3 +4,4 @@ version = "0.1.0"
 authors = ["John Sirois <john.sirois@gmail.com>"]
 
 [dependencies]
+html5ever = "*"
