@@ -1,11 +1,15 @@
-os:
-  - osx
-  - linux
-
 language: rust
 
-rust:
-  - stable
-  - beta
-  - nightly
+matrix:
+  include:
+    - os: osx
+      rust: stable
 
+    - os: linux
+      rust: stable
+
+    - os: linux
+      rust: beta
+
+    - os: linux
+      rust: nightly
