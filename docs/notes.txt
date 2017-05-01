@@ -1,0 +1,42 @@
+https://www.recreation.gov/camping/upper-pines/r/campgroundDetails.do?contractCode=NRSO&parkId=70925
+https://www.recreation.gov/camping/north-pines/r/campgroundDetails.do?contractCode=NRSO&parkId=70927
+https://www.recreation.gov/camping/lower-pines/r/campgroundDetails.do?contractCode=NRSO&parkId=70928
+
+POST https://www.recreation.gov/campsiteSearch.do
+Content-Type:application/x-www-form-urlencoded
+
+contractCode:NRSO
+parkId:70928
+siteTypeFilter:ALL
+availStatus:ONLINE
+submitSiteForm:true
+search:site
+currentMaximumWindow:12
+arrivalDate:Tue Sep 12 2017
+departureDate:Wed Sep 13 2017
+flexDates:
+loop:
+siteCode:
+lookingFor:
+camping_common_218:
+camping_common_3012:2 # Number of people
+camping_common_3013:
+
+curl -b /tmp/cookies -c /tmp/cookies \
+  --data-urlencode 'contractCode=NRSO' \
+  --data-urlencode 'parkId=70928' \
+  --data-urlencode 'siteTypeFilter=ALL' \
+  --data-urlencode 'availStatus=ONLINE' \
+  --data-urlencode 'submitSiteForm=true' \
+  --data-urlencode 'search=site' \
+  --data-urlencode 'arrivalDate=Tue Sep 12 2017' \
+  --data-urlencode 'departureDate=Wed Sep 13 2017' \
+  --data-urlencode 'flexDates=' \
+  --data-urlencode 'loop=' \
+  --data-urlencode 'siteCode=' \
+  --data-urlencode 'lookingFor=' \
+  --data-urlencode 'camping_common_218=' \
+  --data-urlencode 'camping_common_3012=' \
+  --data-urlencode 'camping_common_3013=' \
+  https://www.recreation.gov/campsiteSearch.do > /tmp/results.html
+
