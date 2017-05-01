@@ -1,4 +1,5 @@
 language: rust
+script: ./scripts/ci.sh
 
 matrix:
   include:
