@@ -5,3 +5,6 @@ authors = ["John Sirois <john.sirois@gmail.com>"]
 
 [dependencies]
 html5ever = "*"
+hyper = "*"
+hyper-native-tls = "*"
+url = "*"
