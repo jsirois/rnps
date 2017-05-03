@@ -17,10 +17,13 @@ use hyper_native_tls::NativeTlsClient;
 
 use url::form_urlencoded;
 
+// TODO(John Sirois): extract a lib to delegate most of this work to via command line arg
+//parameters.
 fn main() {
     let ssl = NativeTlsClient::new().unwrap();
     let http_client = Client::with_connector(HttpsConnector::new(ssl));
 
+    // TODO(John Sirois): allow for parametrization of campground and date range at least.
     let body = form_urlencoded::Serializer::new(String::new())
         .append_pair("contractCode", "NRSO")
         .append_pair("parkId", "70928")
