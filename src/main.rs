@@ -39,12 +39,14 @@ fn main() {
         .append_pair("camping_common_3013", "")
         .finish();
 
+    // TODO(John Sirois): Handle request errors instead of panicking.
     let mut response = http_client.post("https://www.recreation.gov/campsiteSearch.do")
         .header(ContentType::form_url_encoded())
         .body(&body)
         .send()
         .unwrap();
 
+    // TODO(John Sirois): Handle request errors instead of panicking.
     let dom: RcDom = parse_document(RcDom::default(), Default::default())
         .from_utf8()
         .read_from(&mut response)
